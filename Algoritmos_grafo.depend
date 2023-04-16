@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1681686552 source:e:\programas\algoritmos_grafo\main.cpp
+	"Grafo.h"
+	"iostream"
+
+1681686533 source:e:\programas\algoritmos_grafo\src\grafo.cpp
+	"Grafo.h"
+
+1681686533 e:\programas\algoritmos_grafo\include\grafo.h
+	<list>
+	<map>
+
