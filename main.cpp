@@ -1,4 +1,5 @@
 #include "Grafo.h"
+#include "Algoritmos.cpp"
 
 #include "iostream"
 
@@ -39,6 +40,7 @@ int main(int argc, char **argv)
 	g.agregar_vertice(5);
 	g.agregar_vertice(6);
 	g.agregar_vertice(7);
+    g.agregar_vertice(8);
 
 	// Luego los arcos
 	g.agregar_arco(1, 2, 1);
@@ -51,6 +53,9 @@ int main(int argc, char **argv)
 
 	// Mostramos el grafo
 	cout << "Estructura del grafo:\n" << g << "\n";
+
+	cout << "DFS" << endl;
+	DFS_FOREST(g);
 
 	return 0;
 }

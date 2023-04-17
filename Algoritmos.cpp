@@ -1,5 +1,8 @@
 #include <Grafo.h>
 #include <set>
+#include "iostream"
+
+using namespace std;
 
 template <typename C> void DFS_FOREST(const Grafo<C> & grafo);
 template <typename C> void DFS(const Grafo<C> & grafo, int origen, set<int> & visitados);
@@ -11,7 +14,7 @@ template <typename C> void DFS_FOREST(const Grafo<C> & grafo)
     grafo.devolver_vertices(vertices);
     list<int>::iterator itV = vertices.begin();
     while(itV != vertices.end()) {
-        if(vertices.find(*itV) != vertices.end()) { // no visitado
+        if(visitados.find(*itV) == visitados.end()) { // no visitado
             cout << "\n" << endl;
             DFS(grafo, *itV, visitados);
         }
@@ -22,17 +25,15 @@ template <typename C> void DFS_FOREST(const Grafo<C> & grafo)
 template <typename C> void DFS(const Grafo<C> & grafo, int origen, set<int> & visitados)
 {
     visitados.insert(origen);
-    cout << origen << "--> ";
-    typename list<Arco> adyacentes;
+    list<typename Grafo<C>::Arco> adyacentes;
     grafo.devolver_adyacentes(origen, adyacentes);
-    typename list<Arco>::iterator itA = adyacentes.begin();
-    typename list<Arco>::iterator itA_aux;
+    cout << origen << "--> ";
+    typename list<typename Grafo<C>::Arco>::iterator itA = adyacentes.begin();
     while(itA != adyacentes.end()) {
-        itA_aux =
-        if(adyacentes.find(itA->devolver_adyacente() != adyacentes.end())) { // no visitado
-            DFS(grafo, origen, visitados);
+        if(visitados.find(itA->devolver_adyacente()) == visitados.end()) { // no visitado
+            DFS(grafo, itA->devolver_adyacente(), visitados);
         }
+        itA++;
     }
+    cout << origen << "--> ";
 }
-
-
