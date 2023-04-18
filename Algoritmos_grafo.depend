@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1681752779 source:e:\programas\algoritmos_grafo\main.cpp
+1681794279 source:e:\programas\algoritmos_grafo\main.cpp
 	"Grafo.h"
 	"Algoritmos.cpp"
 	"iostream"
@@ -11,12 +11,12 @@
 	<list>
 	<map>
 
-1681753798 source:e:\programas\algoritmos_grafo\algoritmos.cpp
+1681794352 source:e:\programas\algoritmos_grafo\algoritmos.cpp
 	<Grafo.h>
 	<set>
 	"iostream"
 
-1681753798 e:\programas\algoritmos_grafo\algoritmos.cpp
+1681794352 e:\programas\algoritmos_grafo\algoritmos.cpp
 	<Grafo.h>
 	<set>
 	"iostream"

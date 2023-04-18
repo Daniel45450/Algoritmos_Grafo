@@ -54,8 +54,16 @@ int main(int argc, char **argv)
 	// Mostramos el grafo
 	cout << "Estructura del grafo:\n" << g << "\n";
 
+	/*
 	cout << "DFS" << endl;
 	DFS_FOREST(g);
+    */
+
+	int origen = 1;
+	int destino = 7;
+    set<int> visitados;
+    list<int> camino;
+	buscarCamino(g, origen, destino, visitados, camino);
 
 	return 0;
 }
