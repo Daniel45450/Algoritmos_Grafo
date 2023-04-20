@@ -8,6 +8,8 @@ template <typename C> void DFS_FOREST(const Grafo<C> & grafo);
 template <typename C> void DFS(const Grafo<C> & grafo, int origen, set<int> & visitados);
 
 template <typename T> void buscarCamino(const Grafo<T> & grafo, int origen, int destino, set<int> & visitados, list<int> & camino);
+template <typename T> void buscarCaminos(const Grafo<T> & grafo, int origen, int destino, set<int> & visitados, list<int> & camino, list<list<int>> & caminos);
+
 template <typename T> void imprimir_lista(const list<T> & lista);
 
 template <typename C> void DFS_FOREST(const Grafo<C> & grafo)
@@ -69,5 +71,28 @@ template <typename T> void imprimir_lista(const list<T> & lista)
         cout << *itL << " ";
         itL++;
     }
+}
+
+template <typename T> void buscarCaminos(const Grafo<T> & grafo, int origen, int destino, set<int> & visitados, list<int> & camino, list<list<int>> & caminos)
+{
+    visitados.insert(origen);
+    camino.push_back(origen);
+    if(origen == destino) {
+        imprimir_lista(camino);
+        cout << "\n";
+        caminos.push_back(camino);
+    }
+    list<typename Grafo<T>::Arco> adyacentes;
+    grafo.devolver_adyacentes(origen, adyacentes);
+    typename list<typename Grafo<T>::Arco>::iterator itA = adyacentes.begin();
+    while(itA != adyacentes.end()) {
+        if(visitados.find(itA->devolver_adyacente()) == visitados.end())
+        {
+            buscarCaminos(grafo, itA->devolver_adyacente(), destino, visitados, camino, caminos);
+        }
+        itA++;
+    }
+    visitados.erase(origen);
+    camino.pop_back();
 }
 

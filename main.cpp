@@ -60,10 +60,14 @@ int main(int argc, char **argv)
     */
 
 	int origen = 1;
-	int destino = 7;
+	int destino = 6;
     set<int> visitados;
     list<int> camino;
+    list<list<int>> caminos;
+    /*
 	buscarCamino(g, origen, destino, visitados, camino);
+	*/
+	buscarCaminos(g, origen, destino, visitados, camino, caminos);
 
 	return 0;
 }
