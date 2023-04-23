@@ -64,10 +64,12 @@ int main(int argc, char **argv)
     set<int> visitados;
     list<int> camino;
     list<list<int>> caminos;
-    /*
-	buscarCamino(g, origen, destino, visitados, camino);
-	*/
+
+	//buscarCamino(g, origen, destino, visitados, camino);
+
 	buscarCaminos(g, origen, destino, visitados, camino, caminos);
+
+    imprimir_caminos(caminos);
 
 	return 0;
 }
